@@ -1381,3 +1381,149 @@ footer a{
     }
 
     }
+/* PROGRAM RESOURCES */
+
+.resources-section{
+
+    padding:110px 0;
+
+}
+
+
+.resources-section h2 span{
+
+    color:#2bd4f5;
+
+}
+
+
+.resources-intro{
+
+    max-width:650px;
+
+    margin-top:25px;
+
+    color:#89929e;
+
+    font-size:17px;
+
+    line-height:1.8;
+
+}
+
+
+.resources-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:25px;
+
+    margin-top:50px;
+
+}
+
+
+.resource-card{
+
+    display:flex;
+
+    gap:25px;
+
+    padding:35px;
+
+    border-radius:28px;
+
+    background:#070b11;
+
+    border:1px solid #172331;
+
+    transition:.25s;
+
+}
+
+
+.resource-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:#2b5665;
+
+}
+
+
+.resource-icon{
+
+    width:65px;
+
+    height:65px;
+
+    flex-shrink:0;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:20px;
+
+    background:#0a2630;
+
+    font-size:28px;
+
+}
+
+
+.resource-card h3{
+
+    font-size:22px;
+
+}
+
+
+.resource-card p{
+
+    margin-top:12px;
+
+    color:#858e9b;
+
+    line-height:1.7;
+
+}
+
+
+.resource-link{
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    color:#2bd4f5;
+
+    font-weight:600;
+
+}
+
+
+@media(max-width:800px){
+
+    .resources-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+@media(max-width:500px){
+
+    .resource-card{
+
+        flex-direction:column;
+
+        padding:28px;
+
+    }
+
+    }
