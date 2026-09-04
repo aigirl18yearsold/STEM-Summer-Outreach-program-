@@ -1229,3 +1229,155 @@ footer a{
     color:#2bd4f5;
 
 }
+/* STAY UPDATED */
+
+.subscribe-section{
+
+    padding:120px 0;
+
+    background:
+    radial-gradient(
+        ellipse at center,
+        rgba(0,150,190,.08),
+        transparent 60%
+    );
+
+}
+
+
+.subscribe-card{
+
+    padding:clamp(40px,7vw,80px);
+
+    border-radius:35px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #071018,
+        #05070c
+    );
+
+    border:1px solid #1b3440;
+
+}
+
+
+.subscribe-card h2{
+
+    max-width:750px;
+
+}
+
+
+.subscribe-card h2 span{
+
+    color:#2bd4f5;
+
+}
+
+
+.subscribe-card > p{
+
+    max-width:650px;
+
+    margin-top:25px;
+
+    color:#89929e;
+
+    font-size:17px;
+
+    line-height:1.8;
+
+}
+
+
+.subscribe-form{
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr auto;
+
+    gap:12px;
+
+    margin-top:35px;
+
+}
+
+
+.subscribe-form input{
+
+    background:#03070b;
+
+    border:1px solid #1b2d38;
+
+    border-radius:12px;
+
+    padding:17px 18px;
+
+    color:white;
+
+    font-size:14px;
+
+    outline:none;
+
+}
+
+
+.subscribe-form input:focus{
+
+    border-color:#2bd4f5;
+
+}
+
+
+.subscribe-button{
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:0 25px;
+
+    background:#25cce9;
+
+    color:#031016;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+}
+
+
+.subscribe-card small{
+
+    display:block;
+
+    margin-top:15px;
+
+    color:#66717d;
+
+}
+
+
+/* MOBILE SUBSCRIBE */
+
+@media(max-width:800px){
+
+    .subscribe-form{
+
+        grid-template-columns:
+        1fr;
+
+    }
+
+
+    .subscribe-button{
+
+        padding:17px;
+
+    }
+
+    }
