@@ -1157,3 +1157,75 @@ footer a{
     }
 
   }
+/* COHORT 2027 */
+
+.cohort-section{
+
+    padding:120px 0;
+
+}
+
+
+.cohort-card{
+
+    padding:clamp(45px,8vw,90px);
+
+    border-radius:35px;
+
+    background:
+    radial-gradient(
+        circle at top right,
+        rgba(0,190,220,.18),
+        transparent 45%
+    ),
+    #070b11;
+
+    border:1px solid #1d3540;
+
+}
+
+
+.cohort-card h2{
+
+    margin-top:10px;
+
+}
+
+
+.cohort-card h2 span{
+
+    color:#2bd4f5;
+
+}
+
+
+.cohort-card > p{
+
+    margin-top:25px;
+
+    color:#89929e;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+
+
+.opening-date{
+
+    display:inline-block;
+
+    margin-top:30px;
+
+    padding:15px 20px;
+
+    border-radius:100px;
+
+    background:#08141a;
+
+    border:1px solid #1b3a45;
+
+    color:#2bd4f5;
+
+}
