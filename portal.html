@@ -2,14 +2,18 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Student Portal | STEM Summer Outreach Program</title>
 
+
 <style>
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono&family=Inter:wght@400;500;600;700;800&display=swap');
+
 
 *{
     margin:0;
@@ -17,271 +21,1457 @@
     box-sizing:border-box;
 }
 
+
+html{
+    scroll-behavior:smooth;
+}
+
+
 body{
+
     font-family:"Inter",sans-serif;
+
     background:#030508;
+
     color:#f4f6f8;
+
     min-height:100vh;
-}
 
-/* NAVIGATION */
-
-nav{
-    height:80px;
-    padding:0 7%;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    border-bottom:1px solid #17202a;
-    background:#05070b;
-}
-
-.brand{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    font-weight:700;
-    text-decoration:none;
-    color:white;
-}
-
-.logo{
-    width:45px;
-    height:45px;
-    border-radius:15px;
-    display:grid;
-    place-items:center;
-    background:linear-gradient(135deg,#073b48,#17213b);
-    color:#32d6ff;
-    font-size:20px;
-}
-
-.back{
-    color:#8f98a5;
-    text-decoration:none;
-    font-size:14px;
-}
-
-.back:hover{
-    color:#2bd4f5;
 }
 
 
-/* AUTH PAGE */
+/* =========================
+   LOGIN PAGE
+========================= */
+
 
 .auth-container{
-    min-height:calc(100vh - 80px);
+
+    min-height:100vh;
+
     display:flex;
-    justify-content:center;
+
     align-items:center;
-    padding:40px 20px;
+
+    justify-content:center;
+
+    padding:30px;
+
+    background:
+
+    radial-gradient(
+        circle at top,
+        rgba(0,190,220,.12),
+        transparent 40%
+    ),
+
+    #030508;
+
 }
+
 
 .auth-card{
+
     width:100%;
+
     max-width:480px;
+
     padding:45px;
+
     border-radius:28px;
-    background:linear-gradient(135deg,#080d17,#05070c);
-    border:1px solid #1a2935;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #080d17,
+        #05070c
+    );
+
+    border:
+
+    1px solid #1a2935;
+
 }
+
+
+.auth-logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin-bottom:35px;
+
+}
+
+
+.logo{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:18px;
+
+    display:grid;
+
+    place-items:center;
+
+    font-size:24px;
+
+    font-weight:800;
+
+    color:#32d6ff;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #073b48,
+        #17213b
+    );
+
+}
+
+
+.logo-text{
+
+    font-weight:700;
+
+    font-size:18px;
+
+}
+
+
+.logo-text small{
+
+    display:block;
+
+    color:#7b8490;
+
+    font-size:12px;
+
+    margin-top:4px;
+
+}
+
 
 .portal-tag{
+
     color:#2bd4f5;
+
     font-family:"DM Mono",monospace;
+
     font-size:12px;
+
     letter-spacing:2px;
+
     margin-bottom:18px;
+
 }
 
-h1{
-    font-size:36px;
+
+.auth-card h1{
+
+    font-size:38px;
+
     margin-bottom:12px;
+
 }
+
 
 .subtitle{
+
     color:#8c96a3;
+
     line-height:1.7;
+
     margin-bottom:30px;
+
 }
 
-
-/* FORM */
 
 .form-group{
+
     margin-bottom:18px;
+
 }
 
-label{
+
+.form-group label{
+
     display:block;
+
     margin-bottom:8px;
+
     color:#cdd3db;
+
     font-size:14px;
+
 }
 
-input{
+
+.form-group input{
+
     width:100%;
+
     padding:15px 16px;
+
     border-radius:12px;
-    border:1px solid #24303c;
+
+    border:
+
+    1px solid #24303c;
+
     background:#05080d;
+
     color:white;
+
     font-size:15px;
+
     outline:none;
+
 }
 
-input:focus{
+
+.form-group input:focus{
+
     border-color:#2bd4f5;
+
 }
 
-button{
+
+.auth-button{
+
     width:100%;
+
     border:none;
+
     padding:16px;
+
     border-radius:12px;
+
     background:#25cbe9;
+
     color:#031016;
+
     font-size:15px;
+
     font-weight:700;
+
     cursor:pointer;
+
     margin-top:10px;
+
 }
 
-button:hover{
-    opacity:.9;
+
+.auth-button:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
 }
+
 
 .switch-text{
+
     text-align:center;
+
     color:#87909c;
+
     font-size:14px;
+
     margin-top:25px;
+
 }
 
-.switch-text span{
+
+.switch-link{
+
     color:#2bd4f5;
+
     cursor:pointer;
+
     font-weight:600;
+
 }
 
-
-/* MESSAGE */
 
 .message{
+
     display:none;
+
     margin-top:20px;
+
     padding:13px;
+
     border-radius:10px;
+
     font-size:14px;
+
 }
+
 
 .error{
+
     background:#2a1115;
+
     color:#ff9ca6;
-    border:1px solid #5a2028;
+
+    border:
+
+    1px solid #5a2028;
+
 }
 
+
 .success{
+
     background:#0d2424;
+
     color:#62e6d8;
-    border:1px solid #1d5755;
+
+    border:
+
+    1px solid #1d5755;
+
+}
+
+
+
+/* =========================
+   PORTAL
+========================= */
+
+
+.portal{
+
+    display:none;
+
+    min-height:100vh;
+
+}
+
+
+/* TOP BAR */
+
+
+.topbar{
+
+    height:80px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 5%;
+
+    border-bottom:
+
+    1px solid #17202a;
+
+    background:
+
+    rgba(5,7,11,.96);
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+
+    backdrop-filter:
+
+    blur(15px);
+
+}
+
+
+.menu-button{
+
+    width:48px;
+
+    height:48px;
+
+    border:none;
+
+    background:#0a0f16;
+
+    border:
+
+    1px solid #1b2935;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    display:grid;
+
+    place-items:center;
+
+}
+
+
+.menu-lines{
+
+    width:20px;
+
+}
+
+
+.menu-lines span{
+
+    display:block;
+
+    height:2px;
+
+    background:#dbe2e8;
+
+    margin:5px 0;
+
+    border-radius:5px;
+
+}
+
+
+.top-brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+
+.top-logo{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:15px;
+
+    display:grid;
+
+    place-items:center;
+
+    font-weight:800;
+
+    color:#32d6ff;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #073b48,
+        #17213b
+    );
+
+}
+
+
+.top-brand-text{
+
+    font-weight:700;
+
+}
+
+
+.top-brand-text small{
+
+    display:block;
+
+    color:#77818d;
+
+    font-size:11px;
+
+    margin-top:3px;
+
+}
+
+
+.back-link{
+
+    color:#8f98a5;
+
+    text-decoration:none;
+
+    font-size:14px;
+
+}
+
+
+.back-link:hover{
+
+    color:#2bd4f5;
+
+}
+
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+
+.overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+
+    rgba(0,0,0,.65);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.3s;
+
+    z-index:150;
+
+}
+
+
+.overlay.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+
+.sidebar{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:300px;
+
+    max-width:85%;
+
+    height:100vh;
+
+    background:#070b11;
+
+    border-right:
+
+    1px solid #172331;
+
+    z-index:200;
+
+    transform:
+
+    translateX(-100%);
+
+    transition:.3s;
+
+    padding:25px;
+
+    overflow-y:auto;
+
+}
+
+
+.sidebar.active{
+
+    transform:
+
+    translateX(0);
+
+}
+
+
+.sidebar-header{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding-bottom:25px;
+
+    border-bottom:
+
+    1px solid #17202a;
+
+}
+
+
+.sidebar-brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+
+.sidebar-logo{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:16px;
+
+    display:grid;
+
+    place-items:center;
+
+    font-size:20px;
+
+    font-weight:800;
+
+    color:#32d6ff;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #073b48,
+        #17213b
+    );
+
+}
+
+
+.sidebar-brand strong{
+
+    font-size:15px;
+
+}
+
+
+.sidebar-brand small{
+
+    display:block;
+
+    color:#78818d;
+
+    font-size:11px;
+
+    margin-top:4px;
+
+}
+
+
+.close-menu{
+
+    width:40px;
+
+    height:40px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#101720;
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+}
+
+
+.menu-title{
+
+    color:#56616d;
+
+    font-family:"DM Mono",monospace;
+
+    font-size:11px;
+
+    letter-spacing:2px;
+
+    margin:
+
+    30px 0 15px;
+
+}
+
+
+.menu-item{
+
+    width:100%;
+
+    border:none;
+
+    background:transparent;
+
+    color:#aab2bc;
+
+    padding:15px;
+
+    border-radius:13px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    text-align:left;
+
+    cursor:pointer;
+
+    font-family:"Inter",sans-serif;
+
+    font-size:14px;
+
+    margin-bottom:5px;
+
+}
+
+
+.menu-item:hover{
+
+    background:#0e1720;
+
+    color:white;
+
+}
+
+
+.menu-item.active{
+
+    background:#10232b;
+
+    color:#32d6ff;
+
+}
+
+
+.menu-icon{
+
+    width:24px;
+
+    font-size:18px;
+
+    text-align:center;
+
+}
+
+
+.menu-bottom{
+
+    margin-top:30px;
+
+    padding-top:25px;
+
+    border-top:
+
+    1px solid #17202a;
+
+}
+
+
+.logout-menu{
+
+    color:#ff9ca6;
+
+}
+
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+
+.main{
+
+    max-width:1150px;
+
+    margin:auto;
+
+    padding:
+
+    70px 7%;
+
+}
+
+
+.page{
+
+    display:none;
+
+}
+
+
+.page.active{
+
+    display:block;
+
+}
+
+
+.page-header{
+
+    margin-bottom:45px;
+
+}
+
+
+.page-header h1{
+
+    font-size:
+
+    clamp(38px,6vw,58px);
+
+    letter-spacing:-2px;
+
+}
+
+
+.page-header p{
+
+    color:#89929e;
+
+    margin-top:15px;
+
+    line-height:1.7;
+
+    max-width:650px;
+
 }
 
 
 /* DASHBOARD */
 
-.dashboard{
-    display:none;
-    min-height:calc(100vh - 80px);
-    padding:60px 7%;
-}
-
-.dashboard-box{
-    max-width:1000px;
-    margin:auto;
-}
-
-.dashboard-header{
-    margin-bottom:45px;
-}
-
-.dashboard-header h1{
-    font-size:48px;
-}
-
-.dashboard-header p{
-    color:#89929e;
-    margin-top:12px;
-}
 
 .dashboard-grid{
+
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+    grid-template-columns:
+
+    repeat(3,1fr);
+
     gap:20px;
+
 }
+
 
 .dashboard-card{
-    padding:30px;
-    border-radius:22px;
+
+    padding:32px;
+
+    border-radius:25px;
+
     background:#070b11;
-    border:1px solid #172331;
+
+    border:
+
+    1px solid #172331;
+
+    min-height:230px;
+
 }
+
 
 .dashboard-card h3{
-    margin-bottom:12px;
+
+    font-size:21px;
+
+    margin-bottom:15px;
+
 }
+
 
 .dashboard-card p{
-    color:#85909c;
-    line-height:1.7;
+
+    color:#89929e;
+
+    line-height:1.8;
+
     font-size:14px;
+
 }
+
 
 .status{
+
     display:inline-block;
-    margin-top:18px;
-    padding:8px 12px;
-    border-radius:30px;
+
+    margin-top:25px;
+
+    padding:
+
+    9px 14px;
+
+    border-radius:100px;
+
     background:#17120b;
-    border:1px solid #3c2c12;
+
+    border:
+
+    1px solid #3c2c12;
+
     color:#e4a64e;
-    font-size:12px;
+
+    font-size:11px;
+
+    font-family:"DM Mono",monospace;
+
 }
 
-.logout-btn{
-    width:auto;
-    padding:12px 22px;
-    background:#161d26;
-    color:white;
-    margin-top:35px;
+
+
+/* PROFILE */
+
+
+.profile-card{
+
+    max-width:700px;
+
+    padding:40px;
+
+    border-radius:28px;
+
+    background:#070b11;
+
+    border:
+
+    1px solid #172331;
+
 }
+
+
+.profile-avatar{
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:50%;
+
+    display:grid;
+
+    place-items:center;
+
+    font-size:34px;
+
+    font-weight:800;
+
+    color:#2bd4f5;
+
+    background:#0d2530;
+
+    margin-bottom:30px;
+
+}
+
+
+.profile-row{
+
+    padding:
+
+    20px 0;
+
+    border-bottom:
+
+    1px solid #17202a;
+
+}
+
+
+.profile-row:last-child{
+
+    border-bottom:none;
+
+}
+
+
+.profile-label{
+
+    color:#6f7885;
+
+    font-size:12px;
+
+    font-family:"DM Mono",monospace;
+
+    letter-spacing:1px;
+
+    margin-bottom:8px;
+
+}
+
+
+.profile-value{
+
+    font-size:17px;
+
+    color:#e4e8ec;
+
+}
+
+
+
+/* COHORT */
+
+
+.cohort-card{
+
+    max-width:850px;
+
+    padding:45px;
+
+    border-radius:30px;
+
+    background:
+
+    radial-gradient(
+        circle at top right,
+        rgba(0,180,220,.12),
+        transparent 45%
+    ),
+
+    #070b11;
+
+    border:
+
+    1px solid #172331;
+
+}
+
+
+.cohort-card h2{
+
+    font-size:38px;
+
+    margin-bottom:20px;
+
+}
+
+
+.cohort-card p{
+
+    color:#9099a5;
+
+    line-height:1.9;
+
+    max-width:650px;
+
+}
+
+
+.cohort-date{
+
+    margin-top:30px;
+
+    padding:20px;
+
+    border-radius:16px;
+
+    background:#0c141b;
+
+    color:#2bd4f5;
+
+    font-weight:600;
+
+}
+
+
+
+/* APPLICATION */
+
+
+.application-card{
+
+    max-width:850px;
+
+    padding:50px;
+
+    border-radius:30px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #080d17,
+        #05070c
+    );
+
+    border:
+
+    1px solid #172331;
+
+    text-align:center;
+
+}
+
+
+.application-icon{
+
+    font-size:55px;
+
+    margin-bottom:25px;
+
+}
+
+
+.application-card h2{
+
+    font-size:38px;
+
+}
+
+
+.application-card p{
+
+    color:#89929e;
+
+    line-height:1.8;
+
+    max-width:600px;
+
+    margin:
+
+    20px auto;
+
+}
+
+
+.coming-soon{
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    padding:
+
+    12px 20px;
+
+    border-radius:100px;
+
+    background:#17120b;
+
+    border:
+
+    1px solid #3c2c12;
+
+    color:#e4a64e;
+
+    font-family:"DM Mono",monospace;
+
+    font-size:12px;
+
+}
+
+
+
+/* RESOURCES */
+
+
+.resource-grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+
+.resource-card{
+
+    padding:35px;
+
+    border-radius:25px;
+
+    background:#070b11;
+
+    border:
+
+    1px solid #172331;
+
+}
+
+
+.resource-icon{
+
+    font-size:38px;
+
+    margin-bottom:20px;
+
+}
+
+
+.resource-card h3{
+
+    font-size:22px;
+
+}
+
+
+.resource-card p{
+
+    color:#89929e;
+
+    line-height:1.7;
+
+    margin:
+
+    12px 0 25px;
+
+}
+
+
+.resource-button{
+
+    display:inline-block;
+
+    padding:
+
+    13px 20px;
+
+    border-radius:100px;
+
+    background:#10232b;
+
+    color:#2bd4f5;
+
+    text-decoration:none;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+
+
+/* COMMUNITY */
+
+
+.community-grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+
+.community-card{
+
+    padding:40px;
+
+    border-radius:25px;
+
+    background:#070b11;
+
+    border:
+
+    1px solid #172331;
+
+}
+
+
+.community-card h2{
+
+    font-size:28px;
+
+    margin:
+
+    15px 0;
+
+}
+
+
+.community-card p{
+
+    color:#89929e;
+
+    line-height:1.8;
+
+}
+
+
+.community-button{
+
+    display:inline-block;
+
+    margin-top:25px;
+
+    padding:
+
+    14px 22px;
+
+    border-radius:100px;
+
+    text-decoration:none;
+
+    background:#24c9e9;
+
+    color:#031016;
+
+    font-weight:700;
+
+    font-size:14px;
+
+}
+
+
+
+/* FOOTER */
+
+
+.portal-footer{
+
+    margin-top:80px;
+
+    padding-top:30px;
+
+    border-top:
+
+    1px solid #17202a;
+
+    color:#59636f;
+
+    font-size:12px;
+
+    text-align:center;
+
+}
+
 
 
 /* MOBILE */
 
-@media(max-width:750px){
 
-    .auth-card{
-        padding:30px 25px;
-    }
+@media(max-width:850px){
 
-    h1{
-        font-size:30px;
-    }
-
-    .dashboard{
-        padding:40px 25px;
-    }
-
-    .dashboard-header h1{
-        font-size:35px;
-    }
 
     .dashboard-grid{
+
         grid-template-columns:1fr;
+
     }
 
+
+    .resource-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .community-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .main{
+
+        padding:
+
+        45px 25px;
+
+    }
+
+
+    .topbar{
+
+        padding:0 20px;
+
+    }
+
+
 }
+
+
+@media(max-width:550px){
+
+
+    .auth-card{
+
+        padding:30px 24px;
+
+    }
+
+
+    .auth-card h1{
+
+        font-size:32px;
+
+    }
+
+
+    .back-link{
+
+        font-size:12px;
+
+    }
+
+
+    .top-brand-text{
+
+        font-size:14px;
+
+    }
+
+
+    .top-logo{
+
+        width:40px;
+
+        height:40px;
+
+    }
+
+
+    .profile-card,
+
+    .cohort-card,
+
+    .application-card{
+
+        padding:28px;
+
+    }
+
+
+    .page-header h1{
+
+        font-size:38px;
+
+    }
+
+
+}
+
 
 </style>
 
@@ -291,135 +1481,565 @@ button:hover{
 <body>
 
 
-<!-- NAVIGATION -->
 
-<nav>
+<!-- =========================
+     LOGIN / CREATE ACCOUNT
+========================= -->
 
-<a href="index.html" class="brand">
-
-<div class="logo">S</div>
-
-<div>
-STEM Summer<br>
-<span style="font-size:11px;color:#7b8490;">
-Student Portal
-</span>
-</div>
-
-</a>
-
-
-<a href="index.html" class="back">
-← Back to Website
-</a>
-
-</nav>
-
-
-
-<!-- LOGIN / SIGNUP -->
 
 <div class="auth-container" id="authContainer">
 
+
 <div class="auth-card">
 
+
+<div class="auth-logo">
+
+<div class="logo">
+
+S
+
+</div>
+
+
+<div class="logo-text">
+
+STEM Summer
+
+<small>
+Student Portal
+</small>
+
+</div>
+
+</div>
+
+
+
 <p class="portal-tag">
+
 STUDENT PORTAL
+
 </p>
 
 
 <h1 id="formTitle">
+
 Welcome back.
+
 </h1>
 
 
 <p class="subtitle" id="formSubtitle">
+
 Log in to access your STEM Summer Outreach Program student portal.
+
 </p>
 
 
-<div class="form-group" id="nameGroup" style="display:none;">
 
-<label>Full Name</label>
+<div class="form-group"
+id="nameGroup"
+style="display:none;">
+
+<label>
+
+Full Name
+
+</label>
+
 
 <input
+
 type="text"
+
 id="name"
-placeholder="Enter your full name">
+
+placeholder="Enter your full name"
+
+>
 
 </div>
 
 
+
 <div class="form-group">
 
-<label>Email Address</label>
+<label>
+
+Email Address
+
+</label>
+
 
 <input
+
 type="email"
+
 id="email"
+
 placeholder="Enter your email"
-required>
+
+>
 
 </div>
+
 
 
 <div class="form-group">
 
-<label>Password</label>
+<label>
+
+Password
+
+</label>
+
 
 <input
+
 type="password"
+
 id="password"
+
 placeholder="At least 6 characters"
-required>
+
+>
 
 </div>
 
 
-<button id="authButton">
+
+<button
+
+class="auth-button"
+
+id="authButton"
+
+>
 
 Log In
 
 </button>
 
 
-<div id="message" class="message"></div>
+
+<div
+
+id="message"
+
+class="message"
+
+></div>
 
 
-<p class="switch-text" id="switchText">
+
+<p class="switch-text">
+
+<span id="switchQuestion">
 
 Don't have an account?
 
-<span id="switchMode">
+</span>
+
+<span
+
+class="switch-link"
+
+id="switchMode"
+
+>
+
 Create Account
+
 </span>
 
 </p>
 
-</div>
 
 </div>
 
+</div>
 
 
-<!-- STUDENT DASHBOARD -->
 
-<div class="dashboard" id="dashboard">
+<!-- =========================
+     PORTAL
+========================= -->
 
-<div class="dashboard-box">
+
+<div
+
+class="portal"
+
+id="portal"
+
+>
 
 
-<div class="dashboard-header">
 
-<p class="portal-tag">
-STUDENT DASHBOARD
+<!-- TOP BAR -->
+
+
+<header class="topbar">
+
+
+<button
+
+class="menu-button"
+
+id="menuButton"
+
+aria-label="Open Menu"
+
+>
+
+<div class="menu-lines">
+
+<span></span>
+
+<span></span>
+
+<span></span>
+
+</div>
+
+</button>
+
+
+
+<div class="top-brand">
+
+
+<div class="top-logo">
+
+S
+
+</div>
+
+
+<div class="top-brand-text">
+
+STEM Summer
+
+<small>
+
+Student Portal
+
+</small>
+
+</div>
+
+
+</div>
+
+
+
+<a
+
+href="index.html"
+
+class="back-link"
+
+>
+
+← Back to Website
+
+</a>
+
+
+</header>
+
+
+
+<!-- OVERLAY -->
+
+
+<div
+
+class="overlay"
+
+id="overlay"
+
+></div>
+
+
+
+<!-- SIDEBAR -->
+
+
+<aside
+
+class="sidebar"
+
+id="sidebar"
+
+>
+
+
+<div class="sidebar-header">
+
+
+<div class="sidebar-brand">
+
+
+<div class="sidebar-logo">
+
+S
+
+</div>
+
+
+<div>
+
+<strong>
+
+STEM Summer
+
+</strong>
+
+
+<small>
+
+Outreach Program
+
+</small>
+
+</div>
+
+
+</div>
+
+
+
+<button
+
+class="close-menu"
+
+id="closeMenu"
+
+>
+
+×
+
+
+</button>
+
+
+</div>
+
+
+
+<p class="menu-title">
+
+STUDENT PORTAL
+
 </p>
 
+
+
+<button
+
+class="menu-item active"
+
+data-page="dashboard"
+
+>
+
+<span class="menu-icon">
+
+🏠
+
+</span>
+
+Dashboard
+
+</button>
+
+
+
+<button
+
+class="menu-item"
+
+data-page="profile"
+
+>
+
+<span class="menu-icon">
+
+👤
+
+</span>
+
+My Profile
+
+</button>
+
+
+
+<button
+
+class="menu-item"
+
+data-page="cohort"
+
+>
+
+<span class="menu-icon">
+
+📅
+
+</span>
+
+Cohort 2027
+
+</button>
+
+
+
+<button
+
+class="menu-item"
+
+data-page="application"
+
+>
+
+<span class="menu-icon">
+
+🚀
+
+</span>
+
+Application Portal
+
+</button>
+
+
+
+<button
+
+class="menu-item"
+
+data-page="resources"
+
+>
+
+<span class="menu-icon">
+
+📚
+
+</span>
+
+Program Resources
+
+</button>
+
+
+
+<p class="menu-title">
+
+COMMUNITY
+
+</p>
+
+
+
+<button
+
+class="menu-item"
+
+data-page="community"
+
+>
+
+<span class="menu-icon">
+
+🌍
+
+</span>
+
+Community
+
+</button>
+
+
+
+<div class="menu-bottom">
+
+
+<button
+
+class="menu-item logout-menu"
+
+id="logoutButton"
+
+>
+
+<span class="menu-icon">
+
+🚪
+
+</span>
+
+Log Out
+
+</button>
+
+
+</div>
+
+
+</aside>
+
+
+
+<!-- MAIN -->
+
+
+<main class="main">
+
+
+
+<!-- DASHBOARD -->
+
+
+<section
+
+class="page active"
+
+id="dashboardPage"
+
+>
+
+
+<div class="page-header">
+
+
+<p class="portal-tag">
+
+STUDENT DASHBOARD
+
+</p>
+
+
 <h1>
-Welcome, <span id="studentName">Student</span> 👋
+
+Welcome,
+
+<span id="dashboardName">
+
+Student
+
+</span>
+
+👋
+
 </h1>
 
-<p id="studentEmail"></p>
+
+<p id="dashboardEmail"></p>
+
 
 </div>
 
@@ -430,17 +2050,27 @@ Welcome, <span id="studentName">Student</span> 👋
 
 <div class="dashboard-card">
 
+
 <h3>
+
 🎓 Student Account
+
 </h3>
 
+
 <p>
+
 Your STEM Summer Outreach Program student account is active.
+
 </p>
 
+
 <div class="status">
+
 ● ACCOUNT ACTIVE
+
 </div>
+
 
 </div>
 
@@ -448,17 +2078,27 @@ Your STEM Summer Outreach Program student account is active.
 
 <div class="dashboard-card">
 
+
 <h3>
+
 📅 Cohort 2027
+
 </h3>
 
+
 <p>
+
 Applications for the next cohort are expected to open in March 2027.
+
 </p>
 
+
 <div class="status">
+
 ● APPLICATIONS CLOSED
+
 </div>
+
 
 </div>
 
@@ -466,17 +2106,24 @@ Applications for the next cohort are expected to open in March 2027.
 
 <div class="dashboard-card">
 
+
 <h3>
+
 🚀 Application Portal
+
 </h3>
 
+
 <p>
-When applications open, eligible students will be able to access the application portal here.
+
+Your account is ready. The application portal will become available when applications open.
+
 </p>
 
+
 <div class="status">
+
 COMING SOON
-</div>
 
 </div>
 
@@ -484,588 +2131,438 @@ COMING SOON
 </div>
 
 
-<button class="logout-btn" id="logoutButton">
+</div>
 
-Log Out
 
-</button>
+</section>
+
+
+
+<!-- PROFILE -->
+
+
+<section
+
+class="page"
+
+id="profilePage"
+
+>
+
+
+<div class="page-header">
+
+
+<p class="portal-tag">
+
+MY PROFILE
+
+</p>
+
+
+<h1>
+
+Your Profile
+
+</h1>
+
+
+<p>
+
+Your student account information.
+
+</p>
 
 
 </div>
 
+
+
+<div class="profile-card">
+
+
+<div
+
+class="profile-avatar"
+
+id="profileAvatar"
+
+>
+
+S
+
 </div>
 
 
 
-<!-- FIREBASE -->
+<div class="profile-row">
 
-<script type="module">
 
-import { initializeApp }
-from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
+<p class="profile-label">
 
+FULL NAME
 
-import {
-getAuth,
-createUserWithEmailAndPassword,
-signInWithEmailAndPassword,
-signOut,
-onAuthStateChanged
-}
-from "https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js";
+</p>
 
 
-import {
-getFirestore,
-doc,
-setDoc,
-getDoc
-}
-from "https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js";
+<p
 
+class="profile-value"
 
+id="profileName"
 
-const firebaseConfig = {
+>
 
-apiKey: "AIzaSyBzWCoN-a6bA_DUKx4R0QvsbFTZWz1afgg",
+Student
 
-authDomain: "stem-student-portal.firebaseapp.com",
+</p>
 
-projectId: "stem-student-portal",
 
-storageBucket: "stem-student-portal.firebasestorage.app",
+</div>
 
-messagingSenderId: "1075412371236",
 
-appId: "1:1075412371236:web:8cabd187d528c441b015b1"
 
-};
+<div class="profile-row">
 
 
+<p class="profile-label">
 
-const app = initializeApp(firebaseConfig);
+EMAIL ADDRESS
 
-const auth = getAuth(app);
+</p>
 
-const db = getFirestore(app);
 
+<p
 
+class="profile-value"
 
-/* ELEMENTS */
+id="profileEmail"
 
-const emailInput =
-document.getElementById("email");
+>
 
+Loading...
 
-const passwordInput =
-document.getElementById("password");
+</p>
 
 
-const nameInput =
-document.getElementById("name");
+</div>
 
 
-const authButton =
-document.getElementById("authButton");
 
+<div class="profile-row">
 
-const switchMode =
-document.getElementById("switchMode");
 
+<p class="profile-label">
 
-const formTitle =
-document.getElementById("formTitle");
+ACCOUNT STATUS
 
+</p>
 
-const formSubtitle =
-document.getElementById("formSubtitle");
 
+<p class="profile-value">
 
-const nameGroup =
-document.getElementById("nameGroup");
+Active Student Account
 
+</p>
 
-const switchText =
-document.getElementById("switchText");
 
+</div>
 
-const message =
-document.getElementById("message");
 
 
-const authContainer =
-document.getElementById("authContainer");
+<div class="profile-row">
 
 
-const dashboard =
-document.getElementById("dashboard");
+<p class="profile-label">
 
+PROGRAM STATUS
 
-const studentName =
-document.getElementById("studentName");
+</p>
 
 
-const studentEmail =
-document.getElementById("studentEmail");
+<p class="profile-value">
 
+Waiting for Cohort 2027 Applications
 
-const logoutButton =
-document.getElementById("logoutButton");
+</p>
 
 
+</div>
 
-let isSignup = false;
 
+</div>
 
 
-/* MESSAGE FUNCTION */
+</section>
 
-function showMessage(text,type){
 
-message.style.display="block";
 
-message.innerText=text;
+<!-- COHORT -->
 
-message.className="message "+type;
 
-}
+<section
 
+class="page"
 
+id="cohortPage"
 
-/* SWITCH LOGIN / SIGNUP */
+>
 
-switchMode.addEventListener(
-"click",
-()=>{
 
-isSignup=!isSignup;
+<div class="page-header">
 
-message.style.display="none";
 
+<p class="portal-tag">
 
-if(isSignup){
+NEXT COHORT
 
-formTitle.innerText=
-"Create your account.";
+</p>
 
 
-formSubtitle.innerText=
-"Join the STEM Summer Outreach Program student community.";
+<h1>
 
+Cohort 2027
 
-nameGroup.style.display=
-"block";
+</h1>
 
 
-authButton.innerText=
-"Create Account";
+<p>
 
+The next chapter of the STEM Summer Outreach Program is coming soon.
 
-switchText.innerHTML=
-'Already have an account? <span id="switchMode">Log In</span>';
+</p>
 
 
-document
-.getElementById("switchMode")
-.addEventListener(
-"click",
-switchForm
-);
+</div>
 
-}else{
 
-switchForm();
 
-}
+<div class="cohort-card">
 
-}
-);
 
+<h2>
 
+🚀 Coming Soon
 
-function switchForm(){
+</h2>
 
-isSignup=false;
 
+<p>
 
-formTitle.innerText=
-"Welcome back.";
+Applications for the next STEM Summer Outreach Program cohort are expected to open in March 2027.
 
+</p>
 
-formSubtitle.innerText=
-"Log in to access your STEM Summer Outreach Program student portal.";
 
+<p>
 
-nameGroup.style.display=
-"none";
+Students will be able to apply, learn about program activities, connect with the community, and begin their STEM learning journey.
 
+</p>
 
-authButton.innerText=
-"Log In";
 
+<div class="cohort-date">
 
-switchText.innerHTML=
-'Don\'t have an account? <span id="switchMode">Create Account</span>';
+📅 Application portal expected to open in March 2027
 
+</div>
 
-document
-.getElementById("switchMode")
-.addEventListener(
-"click",
-()=>{
 
-isSignup=true;
+</div>
 
-formTitle.innerText=
-"Create your account.";
 
+</section>
 
-formSubtitle.innerText=
-"Join the STEM Summer Outreach Program student community.";
 
 
-nameGroup.style.display=
-"block";
+<!-- APPLICATION -->
 
 
-authButton.innerText=
-"Create Account";
+<section
 
+class="page"
 
-switchText.innerHTML=
-'Already have an account? <span id="switchMode">Log In</span>';
+id="applicationPage"
 
+>
 
-document
-.getElementById("switchMode")
-.addEventListener(
-"click",
-switchForm
-);
 
-}
-);
+<div class="page-header">
 
-}
 
+<p class="portal-tag">
 
+APPLICATION
 
-/* LOGIN / SIGNUP */
+</p>
 
-authButton.addEventListener(
-"click",
-async ()=>{
 
+<h1>
 
-const email=
-emailInput.value.trim();
+Application Portal
 
+</h1>
 
-const password=
-passwordInput.value;
 
+<p>
 
-const name=
-nameInput.value.trim();
+Your account is ready for future applications.
 
+</p>
 
 
-if(!email || !password){
+</div>
 
-showMessage(
-"Please enter your email and password.",
-"error"
-);
 
-return;
 
-}
+<div class="application-card">
 
 
+<div class="application-icon">
 
-if(isSignup && !name){
+🚀
 
-showMessage(
-"Please enter your full name.",
-"error"
-);
+</div>
 
-return;
 
-}
+<h2>
 
+Applications Coming Soon
 
+</h2>
 
-try{
 
+<p>
 
-authButton.innerText=
-"Please wait...";
+The application portal for Cohort 2027 is currently closed.
 
+</p>
 
-authButton.disabled=true;
 
+<p>
 
+When applications open, students with registered accounts will be able to access application information and future program updates here.
 
-if(isSignup){
+</p>
 
 
-const userCredential=
+<div class="coming-soon">
 
-await createUserWithEmailAndPassword(
+APPLICATIONS EXPECTED MARCH 2027
 
-auth,
-email,
-password
+</div>
 
-);
 
+</div>
 
 
-const user=
-userCredential.user;
+</section>
 
 
 
-await setDoc(
+<!-- RESOURCES -->
 
-doc(db,"students",user.uid),
 
-{
+<section
 
-name:name,
+class="page"
 
-email:email,
+id="resourcesPage"
 
-createdAt:
-new Date().toISOString(),
+>
 
-applicationStatus:
-"Not Open"
 
-}
+<div class="page-header">
 
-);
 
+<p class="portal-tag">
 
+PROGRAM RESOURCES
 
-showMessage(
+</p>
 
-"Account created successfully! 🎉",
 
-"success"
+<h1>
 
-);
+Explore & Learn
 
+</h1>
 
-}else{
 
+<p>
 
-await signInWithEmailAndPassword(
+Learn more about the STEM Summer Outreach Program.
 
-auth,
-email,
-password
+</p>
 
-);
 
+</div>
 
-}
 
 
+<div class="resource-grid">
 
-}catch(error){
 
+<div class="resource-card">
 
-console.error(error);
 
+<div class="resource-icon">
 
-let errorMessage=
-error.message;
+📘
 
+</div>
 
 
-if(error.code ===
-"auth/email-already-in-use"){
+<h3>
 
-errorMessage=
-"This email already has an account.";
+Program Brochure
 
-}
+</h3>
 
 
+<p>
 
-if(error.code ===
-"auth/invalid-email"){
+Discover the STEM Summer Outreach Program, its mission, activities, and opportunities.
 
-errorMessage=
-"Please enter a valid email address.";
+</p>
 
-}
 
+<a
 
+class="resource-button"
 
-if(error.code ===
-"auth/weak-password"){
+href="https://docs.google.com/document/d/1UxCHzCDIuhm4jW9wxasypUffR0yV29Zeki_WIJ_GVIE/edit?usp=drivesdk"
 
-errorMessage=
-"Password must be at least 6 characters.";
+target="_blank"
 
-}
+>
 
+View Brochure →
 
+</a>
 
-if(error.code ===
-"auth/invalid-credential"){
 
-errorMessage=
-"Incorrect email or password.";
+</div>
 
-}
 
 
+<div class="resource-card">
 
-showMessage(
 
-errorMessage,
+<div class="resource-icon">
 
-"error"
+📚
 
-);
+</div>
 
 
-}finally{
+<h3>
 
+Program Curriculum
 
-authButton.disabled=false;
+</h3>
 
 
-if(isSignup){
+<p>
 
-authButton.innerText=
-"Create Account";
-
-}else{
-
-authButton.innerText=
-"Log In";
-
-}
-
-}
-
-
-}
-);
-
-
-
-/* AUTH STATE */
-
-onAuthStateChanged(
-
-auth,
-
-async(user)=>{
-
-
-if(user){
-
-
-authContainer.style.display=
-"none";
-
-
-dashboard.style.display=
-"block";
-
-
-studentEmail.innerText=
-user.email;
-
-
-
-try{
-
-
-const studentDoc=
-
-await getDoc(
-
-doc(db,"students",user.uid)
-
-);
-
-
-
-if(
-
-studentDoc.exists()
-
-){
-
-studentName.innerText=
-
-studentDoc.data().name ||
-"Student";
-
-}else{
-
-
-studentName.innerText=
-"Student";
-
-}
-
-
-}catch(error){
-
-
-studentName.innerText=
-"Student";
-
-}
-
-
-}else{
-
-
-authContainer.style.display=
-"flex";
-
-
-dashboard.style.display=
-"none";
-
-
-}
-
-
-}
-
-);
-
-
-
-/* LOGOUT */
-
-logoutButton.addEventListener(
-
-"click",
-
-async()=>{
-
-
-await signOut(auth);
-
-
-}
-
-);
-
-</script>
-
-
-</body>
-
-  </html>
+Explore the learning journey, activities, projects,
