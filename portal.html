@@ -4,7 +4,6 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>STEM Student Portal</title>
@@ -17,367 +16,336 @@
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     background:#050810;
     color:#f5f7fa;
     font-family:Arial,sans-serif;
 }
 
-/* HEADER */
+/* =========================
+HEADER
+========================= */
 
 header{
-
     height:90px;
-
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
-
     padding:0 6%;
-
     border-bottom:1px solid #1c2633;
-
     background:#070a12;
-
 }
 
 .brand{
-
     display:flex;
-
     align-items:center;
-
     gap:15px;
-
 }
 
 .logo{
-
     width:58px;
     height:58px;
-
     border-radius:20px;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     font-size:28px;
-
     font-weight:bold;
-
     color:#2fd7ff;
-
     background:linear-gradient(
         135deg,
         #123d4c,
         #17233b
     );
-
 }
 
 .brand h2{
-
     font-size:24px;
-
 }
 
 .brand p{
-
     color:#8b95a3;
-
     margin-top:5px;
-
 }
-
-/* MENU BUTTON */
 
 .menu-button{
-
     background:none;
-
     border:none;
-
     color:#ffffff;
-
     font-size:30px;
-
     cursor:pointer;
-
 }
 
-/* SIDE MENU */
+/* =========================
+SIDEBAR
+========================= */
 
 .sidebar{
-
     position:fixed;
-
     top:0;
-
     left:-300px;
-
     width:280px;
-
     height:100vh;
-
     background:#0b1019;
-
     border-right:1px solid #263242;
-
     padding:30px;
-
     z-index:1000;
-
     transition:.3s;
-
+    overflow-y:auto;
 }
 
 .sidebar.active{
-
     left:0;
-
 }
 
 .sidebar h2{
-
     margin-bottom:40px;
-
 }
 
 .sidebar a{
-
     display:block;
-
     padding:17px 10px;
-
     margin-bottom:8px;
-
     color:#b7c0cc;
-
     text-decoration:none;
-
     border-radius:10px;
-
 }
 
 .sidebar a:hover{
-
     background:#131b27;
-
     color:#2fd7ff;
-
 }
 
 .close-button{
-
     float:right;
-
     background:none;
-
     border:none;
-
     color:white;
-
     font-size:28px;
-
     cursor:pointer;
-
 }
 
-/* MAIN */
+/* =========================
+MAIN
+========================= */
 
 main{
-
     max-width:1000px;
-
     margin:auto;
-
     padding:80px 35px;
-
 }
 
 .label{
-
     color:#7f8a99;
-
-    letter-spacing:6px;
-
-    font-size:13px;
-
+    letter-spacing:5px;
+    font-size:12px;
 }
 
 h1{
-
     font-size:55px;
-
-    margin-top:35px;
-
+    margin-top:30px;
 }
 
 .email{
-
     color:#9ba6b5;
-
-    font-size:20px;
-
+    font-size:18px;
     margin-top:20px;
-
 }
 
-/* CARDS */
+/* =========================
+CARDS
+========================= */
 
 .card{
-
     margin-top:35px;
-
     padding:45px;
-
     border-radius:30px;
-
     background:#090e17;
-
     border:1px solid #1c2a3a;
-
 }
 
 .card h2{
-
     font-size:30px;
-
 }
 
 .card p{
-
     margin-top:20px;
-
     color:#9aa5b5;
-
-    font-size:18px;
-
+    font-size:17px;
     line-height:1.7;
-
 }
 
 .status{
-
     display:inline-block;
-
-    margin-top:30px;
-
-    padding:14px 22px;
-
+    margin-top:25px;
+    padding:12px 20px;
     border-radius:30px;
-
     color:#e6b665;
-
     background:#1b160d;
-
     border:1px solid #453312;
-
+    font-size:14px;
 }
 
-/* LOGIN BUTTON */
+.open-status{
+    color:#4fe0a1;
+    background:#0d2119;
+    border-color:#1f6545;
+}
 
-.login-button{
+/* =========================
+BUTTONS
+========================= */
 
+.button{
+    display:inline-block;
     margin-top:30px;
-
     padding:15px 28px;
-
     border:none;
-
     border-radius:30px;
-
     background:#2acbea;
-
     color:#061016;
-
     font-size:16px;
-
     font-weight:bold;
-
     cursor:pointer;
-
 }
 
-.login-button:hover{
-
+.button:hover{
     transform:translateY(-2px);
-
 }
-
-/* LOGOUT */
 
 .logout-button{
-
-    margin-top:30px;
-
-    padding:15px 28px;
-
-    border:none;
-
-    border-radius:30px;
-
     background:#171e29;
-
     color:white;
-
-    cursor:pointer;
-
 }
 
-/* MOBILE */
+.disabled-button{
+    background:#18202b;
+    color:#6f7885;
+    cursor:not-allowed;
+}
 
-@media(max-width:600px){
+/* =========================
+FORMS
+========================= */
+
+.form-group{
+    margin-top:25px;
+}
+
+label{
+    display:block;
+    margin-bottom:10px;
+    color:#c7ced8;
+}
+
+input,
+textarea,
+select{
+    width:100%;
+    padding:16px;
+    border-radius:12px;
+    border:1px solid #253142;
+    background:#050810;
+    color:white;
+    font-size:15px;
+}
+
+textarea{
+    min-height:150px;
+    resize:vertical;
+}
+
+/* =========================
+SUBMISSION CARDS
+========================= */
+
+.submission-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.small-card{
+    padding:30px;
+    border-radius:22px;
+    background:#0c121d;
+    border:1px solid #1d2a3a;
+}
+
+.small-card h3{
+    font-size:22px;
+}
+
+.small-card p{
+    font-size:15px;
+}
+
+/* =========================
+PROFILE
+========================= */
+
+.profile-info{
+    margin-top:25px;
+}
+
+.profile-row{
+    padding:15px 0;
+    border-bottom:1px solid #1b2532;
+}
+
+.profile-row span{
+    display:block;
+    color:#778290;
+    font-size:13px;
+    margin-bottom:5px;
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:700px){
 
     header{
-
         height:80px;
-
         padding:0 20px;
-
     }
 
     .brand h2{
-
         font-size:18px;
-
     }
 
     .brand p{
-
-        font-size:13px;
-
+        font-size:12px;
     }
 
     .logo{
-
         width:48px;
-
         height:48px;
-
     }
 
     main{
-
         padding:55px 20px;
-
     }
 
     h1{
-
-        font-size:42px;
-
+        font-size:40px;
     }
 
     .card{
+        padding:28px;
+    }
 
-        padding:30px;
+    .card h2{
+        font-size:25px;
+    }
 
+    .submission-grid{
+        grid-template-columns:1fr;
     }
 
 }
@@ -390,307 +358,412 @@ h1{
 <body>
 
 
-<!-- SIDE MENU -->
+<!-- =========================
+SIDEBAR
+========================= -->
 
 <div class="sidebar" id="sidebar">
 
-<button
-class="close-button"
-onclick="closeMenu()"
->
-
-× 
-
+<button class="close-button" onclick="closeMenu()">
+×
 </button>
-
 
 <h2>Student Portal</h2>
 
-
-<a href="#dashboard">
-
+<a href="#dashboard" onclick="closeMenu()">
 🏠 Dashboard
-
 </a>
 
-
-<a href="#account">
-
+<a href="#account" onclick="closeMenu()">
 🎓 My Account
-
 </a>
 
-
-<a href="#applications">
-
-🚀 Applications
-
+<a href="#applications" onclick="closeMenu()">
+📝 Applications
 </a>
 
+<a href="#submissions" onclick="closeMenu()">
+📁 My Submissions
+</a>
 
-<a href="#resources">
+<a href="#projects" onclick="closeMenu()">
+🚀 Submit Project
+</a>
 
+<a href="#research" onclick="closeMenu()">
+🔬 Submit Research
+</a>
+
+<a href="#resources" onclick="closeMenu()">
 📚 Resources
-
 </a>
 
-
-<a href="#profile">
-
+<a href="#profile" onclick="closeMenu()">
 👤 Profile
-
 </a>
-
 
 <a href="https://aigirl18yearsold.github.io/STEM-Summer-Outreach-program-/">
-
 ← Back to Website
-
 </a>
-
 
 </div>
 
 
-
-<!-- HEADER -->
+<!-- =========================
+HEADER
+========================= -->
 
 <header>
 
-
 <div class="brand">
 
-
 <div class="logo">
-
 S
-
 </div>
-
 
 <div>
 
 <h2>
-
 STEM Summer
-
 </h2>
 
-
 <p>
-
 Student Portal
-
 </p>
 
 </div>
 
-
 </div>
-
 
 
 <button
 class="menu-button"
 onclick="openMenu()"
 >
-
 ☰
-
 </button>
-
 
 </header>
 
 
-
-<!-- MAIN -->
+<!-- =========================
+MAIN
+========================= -->
 
 <main id="dashboard">
 
-
 <p class="label">
-
 STUDENT DASHBOARD
-
 </p>
 
 
-<h1>
-
+<h1 id="welcomeText">
 Welcome to the STEM Student Portal 👋
-
 </h1>
 
 
-<p
-class="email"
-id="userEmail"
->
-
+<p class="email" id="userEmail">
 Not logged in
-
 </p>
 
 
+<!-- =========================
+ACCOUNT
+========================= -->
 
-<!-- ACCOUNT -->
-
-<div
-class="card"
-id="account"
->
-
+<div class="card" id="account">
 
 <h2>
-
 🎓 Student Account
-
 </h2>
 
-
-<p>
-
-Create an account or log in to access future STEM Summer Outreach Program opportunities.
-
+<p id="accountText">
+Log in or create an account to access the student portal.
 </p>
 
 
 <button
-class="login-button"
+class="button"
 id="loginButton"
 >
-
 Log In / Create Account
-
 </button>
 
 
 <button
-class="logout-button"
+class="button logout-button"
 id="logoutButton"
 style="display:none"
 >
-
 Log Out
-
 </button>
 
-
 </div>
 
 
+<!-- =========================
+APPLICATIONS
+========================= -->
 
-<!-- APPLICATIONS -->
-
-<div
-class="card"
-id="applications"
->
-
+<div class="card" id="applications">
 
 <h2>
-
-📅 Cohort 2027
-
+📅 Cohort <span id="cohortYear">2027</span>
 </h2>
 
-
-<p>
-
-Applications for the next cohort are expected to open in March 2027.
-
+<p id="applicationText">
+Checking application status...
 </p>
 
 
-<div class="status">
-
-● APPLICATIONS CLOSED
+<div
+class="status"
+id="applicationStatus"
+>
+Loading...
+</div>
 
 </div>
 
 
-</div>
+<!-- =========================
+SUBMISSIONS STATUS
+========================= -->
 
-
-
-<!-- PORTAL -->
-
-<div class="card">
-
+<div class="card" id="submissions">
 
 <h2>
-
-🚀 Application Portal
-
+📁 My Submissions
 </h2>
 
-
 <p>
-
-When applications open, eligible students will be able to access the application portal here.
-
+Your submitted projects and research papers will appear here.
 </p>
 
 
-<div class="status">
-
-● COMING MARCH 2027
-
-</div>
-
-
-</div>
-
-
-
-<!-- RESOURCES -->
-
 <div
-class="card"
-id="resources"
+class="status"
+id="submissionStatus"
 >
+Checking submission status...
+</div>
 
+</div>
+
+
+<!-- =========================
+PROJECT SUBMISSION
+========================= -->
+
+<div class="card" id="projects">
 
 <h2>
+🚀 Submit a Project
+</h2>
 
+<p>
+Only accepted STEM Summer Outreach Program students will be able to submit projects when submissions are open.
+</p>
+
+
+<div class="form-group">
+
+<label>
+Project Title
+</label>
+
+<input
+type="text"
+id="projectTitle"
+placeholder="Enter your project title"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Project Description
+</label>
+
+<textarea
+id="projectDescription"
+placeholder="Describe your project, what you built, and its purpose"
+></textarea>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Project Link
+</label>
+
+<input
+type="url"
+id="projectLink"
+placeholder="GitHub, website, Google Drive, etc."
+>
+
+</div>
+
+
+<button
+class="button disabled-button"
+id="projectButton"
+disabled
+>
+Project Submissions Closed
+</button>
+
+</div>
+
+
+<!-- =========================
+RESEARCH SUBMISSION
+========================= -->
+
+<div class="card" id="research">
+
+<h2>
+🔬 Submit Research
+</h2>
+
+<p>
+Research submission will be available only to eligible students when the submission period is open.
+</p>
+
+
+<div class="form-group">
+
+<label>
+Research Title
+</label>
+
+<input
+type="text"
+id="researchTitle"
+placeholder="Enter your research title"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Research Abstract
+</label>
+
+<textarea
+id="researchAbstract"
+placeholder="Write a short summary of your research"
+></textarea>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Research Link
+</label>
+
+<input
+type="url"
+id="researchLink"
+placeholder="Google Drive, published paper, document link, etc."
+>
+
+</div>
+
+
+<button
+class="button disabled-button"
+id="researchButton"
+disabled
+>
+Research Submissions Closed
+</button>
+
+</div>
+
+
+<!-- =========================
+RESOURCES
+========================= -->
+
+<div class="card" id="resources">
+
+<h2>
 📚 Program Resources
-
 </h2>
 
-
 <p>
-
-Program resources, curriculum information, and student materials will appear here.
-
+Program curriculum, learning resources, and student materials will become available to accepted students.
 </p>
-
 
 </div>
 
 
+<!-- =========================
+PROFILE
+========================= -->
 
-<!-- PROFILE -->
-
-<div
-class="card"
-id="profile"
->
-
+<div class="card" id="profile">
 
 <h2>
-
 👤 My Profile
-
 </h2>
 
+<div class="profile-info">
 
-<p>
+<div class="profile-row">
 
-Student profile features will become available after account registration.
+<span>Name</span>
 
-</p>
+<strong id="profileName">
+Not available
+</strong>
 
+</div>
+
+
+<div class="profile-row">
+
+<span>Email</span>
+
+<strong id="profileEmail">
+Not available
+</strong>
+
+</div>
+
+
+<div class="profile-row">
+
+<span>Application Status</span>
+
+<strong id="profileStatus">
+Not available
+</strong>
+
+</div>
+
+
+<div class="profile-row">
+
+<span>Account Created</span>
+
+<strong id="profileCreated">
+Not available
+</strong>
+
+</div>
+
+</div>
 
 </div>
 
@@ -699,74 +772,182 @@ Student profile features will become available after account registration.
 
 
 
-<!-- FIREBASE -->
+<!-- =========================
+FIREBASE
+========================= -->
 
 <script type="module">
 
-
 import {
-
 initializeApp
-
-} from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
+}
+from
+"https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
 
 
 import {
-
 getAuth,
-
 GoogleAuthProvider,
-
 signInWithPopup,
-
 onAuthStateChanged,
-
 signOut
+}
+from
+"https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js";
 
-} from "https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js";
+
+import {
+getFirestore,
+doc,
+getDoc,
+setDoc
+}
+from
+"https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js";
 
 
+
+/* =========================
+FIREBASE CONFIG
+========================= */
 
 const firebaseConfig = {
 
-apiKey: "AIzaSyBzWCoN-a6bA_DUKx4R0QvsbFTZWz1afgg",
+apiKey:
+"AIzaSyBzWCoN-a6bA_DUKx4R0QvsbFTZWz1afgg",
 
-authDomain: "stem-student-portal.firebaseapp.com",
+authDomain:
+"stem-student-portal.firebaseapp.com",
 
-projectId: "stem-student-portal",
+projectId:
+"stem-student-portal",
 
-storageBucket: "stem-student-portal.firebasestorage.app",
+storageBucket:
+"stem-student-portal.firebasestorage.app",
 
-messagingSenderId: "1075412371236",
+messagingSenderId:
+"1075412371236",
 
-appId: "1:1075412371236:web:8cabd187d528c441b015b1"
+appId:
+"1:1075412371236:web:8cabd187d528c441b015b1"
 
 };
 
 
 
-const app = initializeApp(firebaseConfig);
+/* =========================
+INITIALIZE FIREBASE
+========================= */
+
+const app =
+initializeApp(firebaseConfig);
 
 
-const auth = getAuth(app);
+const auth =
+getAuth(app);
 
 
-const provider = new GoogleAuthProvider();
+const db =
+getFirestore(app);
 
 
+const provider =
+new GoogleAuthProvider();
+
+
+
+/* =========================
+ELEMENTS
+========================= */
 
 const loginButton =
-document.getElementById("loginButton");
+document.getElementById(
+"loginButton"
+);
 
 
 const logoutButton =
-document.getElementById("logoutButton");
+document.getElementById(
+"logoutButton"
+);
 
 
 const userEmail =
-document.getElementById("userEmail");
+document.getElementById(
+"userEmail"
+);
 
 
+const welcomeText =
+document.getElementById(
+"welcomeText"
+);
+
+
+const profileName =
+document.getElementById(
+"profileName"
+);
+
+
+const profileEmail =
+document.getElementById(
+"profileEmail"
+);
+
+
+const profileStatus =
+document.getElementById(
+"profileStatus"
+);
+
+
+const profileCreated =
+document.getElementById(
+"profileCreated"
+);
+
+
+const applicationText =
+document.getElementById(
+"applicationText"
+);
+
+
+const applicationStatus =
+document.getElementById(
+"applicationStatus"
+);
+
+
+const submissionStatus =
+document.getElementById(
+"submissionStatus"
+);
+
+
+const cohortYear =
+document.getElementById(
+"cohortYear"
+);
+
+
+const projectButton =
+document.getElementById(
+"projectButton"
+);
+
+
+const researchButton =
+document.getElementById(
+"researchButton"
+);
+
+
+
+/* =========================
+LOGIN
+========================= */
 
 loginButton.addEventListener(
 
@@ -776,7 +957,6 @@ async () => {
 
 try{
 
-
 await signInWithPopup(
 
 auth,
@@ -785,11 +965,9 @@ provider
 
 );
 
-
 }
 
 catch(error){
-
 
 alert(
 
@@ -801,15 +979,17 @@ error.message
 
 );
 
-
 }
-
 
 }
 
 );
 
 
+
+/* =========================
+LOGOUT
+========================= */
 
 logoutButton.addEventListener(
 
@@ -817,9 +997,25 @@ logoutButton.addEventListener(
 
 async () => {
 
+try{
 
 await signOut(auth);
 
+}
+
+catch(error){
+
+alert(
+
+"Logout error: "
+
++
+
+error.message
+
+);
+
+}
 
 }
 
@@ -827,11 +1023,216 @@ await signOut(auth);
 
 
 
+/* =========================
+LOAD PORTAL SETTINGS
+========================= */
+
+async function loadPortalSettings(){
+
+try{
+
+const settingsRef =
+
+doc(
+db,
+"settings",
+"portal"
+);
+
+
+const settingsSnap =
+
+await getDoc(
+settingsRef
+);
+
+
+if(
+
+settingsSnap.exists()
+
+){
+
+const settings =
+
+settingsSnap.data();
+
+
+/* COHORT YEAR */
+
+if(
+
+settings.cohortYear
+
+){
+
+cohortYear.textContent =
+
+settings.cohortYear;
+
+}
+
+
+/* APPLICATION STATUS */
+
+if(
+
+settings.applicationsOpen
+
+=== true
+
+){
+
+applicationText.textContent =
+
+"Applications for Cohort "
+
++
+
+settings.cohortYear
+
++
+
+" are currently open.";
+
+applicationStatus.textContent =
+
+"● APPLICATIONS OPEN";
+
+applicationStatus.classList.add(
+
+"open-status"
+
+);
+
+}
+
+else{
+
+applicationText.textContent =
+
+"Applications for the next cohort are currently closed.";
+
+applicationStatus.textContent =
+
+"● APPLICATIONS CLOSED";
+
+}
+
+
+/* SUBMISSION STATUS */
+
+if(
+
+settings.submissionsOpen
+
+=== true
+
+){
+
+submissionStatus.textContent =
+
+"● SUBMISSIONS OPEN";
+
+submissionStatus.classList.add(
+
+"open-status"
+
+);
+
+
+projectButton.disabled =
+
+false;
+
+
+researchButton.disabled =
+
+false;
+
+
+projectButton.classList.remove(
+
+"disabled-button"
+
+);
+
+
+researchButton.classList.remove(
+
+"disabled-button"
+
+);
+
+
+projectButton.textContent =
+
+"Submit Project";
+
+
+researchButton.textContent =
+
+"Submit Research";
+
+}
+
+else{
+
+submissionStatus.textContent =
+
+"● SUBMISSIONS CLOSED";
+
+
+projectButton.disabled =
+
+true;
+
+
+researchButton.disabled =
+
+true;
+
+
+projectButton.textContent =
+
+"Project Submissions Closed";
+
+
+researchButton.textContent =
+
+"Research Submissions Closed";
+
+}
+
+}
+
+}
+
+catch(error){
+
+console.error(
+
+"Settings error:",
+
+error
+
+);
+
+}
+
+}
+
+
+
+/* =========================
+AUTH STATE
+========================= */
+
 onAuthStateChanged(
 
 auth,
 
-(user) => {
+async (user) => {
 
 
 if(user){
@@ -850,6 +1251,19 @@ user.displayName
 user.email;
 
 
+welcomeText.textContent =
+
+"Welcome, "
+
++
+
+user.displayName
+
++
+
+" 👋";
+
+
 loginButton.style.display =
 
 "none";
@@ -860,8 +1274,132 @@ logoutButton.style.display =
 "inline-block";
 
 
+profileName.textContent =
+
+user.displayName;
+
+
+profileEmail.textContent =
+
+user.email;
+
+
+
+/* =========================
+STUDENT DOCUMENT
+========================= */
+
+const studentRef =
+
+doc(
+db,
+"students",
+user.uid
+);
+
+
+const studentSnap =
+
+await getDoc(
+studentRef
+);
+
+
+/* CREATE STUDENT IF NEW */
+
+if(
+
+!studentSnap.exists()
+
+){
+
+await setDoc(
+
+studentRef,
+
+{
+
+name:
+
+user.displayName,
+
+email:
+
+user.email,
+
+applicationStatus:
+
+"Not Open",
+
+createdAt:
+
+new Date().toISOString()
+
 }
 
+);
+
+}
+
+
+/* LOAD STUDENT DATA */
+
+const updatedStudentSnap =
+
+await getDoc(
+studentRef
+);
+
+
+if(
+
+updatedStudentSnap.exists()
+
+){
+
+const student =
+
+updatedStudentSnap.data();
+
+
+profileName.textContent =
+
+student.name
+
+||
+
+user.displayName;
+
+
+profileEmail.textContent =
+
+student.email
+
+||
+
+user.email;
+
+
+profileStatus.textContent =
+
+student.applicationStatus
+
+||
+
+"Not Open";
+
+
+profileCreated.textContent =
+
+student.createdAt
+
+||
+
+"Not available";
+
+}
+
+}
 
 else{
 
@@ -871,6 +1409,11 @@ userEmail.textContent =
 "Not logged in";
 
 
+welcomeText.textContent =
+
+"Welcome to the STEM Student Portal 👋";
+
+
 loginButton.style.display =
 
 "inline-block";
@@ -881,36 +1424,57 @@ logoutButton.style.display =
 "none";
 
 
-}
+profileName.textContent =
 
+"Not available";
+
+
+profileEmail.textContent =
+
+"Not available";
+
+
+profileStatus.textContent =
+
+"Not available";
+
+
+profileCreated.textContent =
+
+"Not available";
+
+}
 
 }
 
 );
 
+
+
+/* =========================
+LOAD SETTINGS
+========================= */
+
+loadPortalSettings();
+
 </script>
 
 
 
-<!-- MENU JAVASCRIPT -->
+<!-- =========================
+MENU
+========================= -->
 
 <script>
-
 
 function openMenu(){
 
 document
-
 .getElementById(
-
 "sidebar"
-
 )
-
 .classList.add(
-
 "active"
-
 );
 
 }
@@ -919,21 +1483,14 @@ document
 function closeMenu(){
 
 document
-
 .getElementById(
-
 "sidebar"
-
 )
-
 .classList.remove(
-
 "active"
-
 );
 
 }
-
 
 </script>
 
